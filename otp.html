@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-6" http-equiv="encoding">
+
+    <title>OTP Prompt Machine!</title>
+
+    <style type="text/css">
+        body {
+          background-image: url(https://media.discordapp.net/attachments/928653248653557790/961325263646507069/unknown.png);
+        }
+        b body {
+            font-family: arial;
+            font-size: 16px;
+            color: #131726;
+            line-height: 16px;
+        }
+
+        a {
+            color: #ff57a8;
+            text-decoration: none;
+        }
+
+        a:hover {}
+
+        b,
+        strong {}
+
+        i,
+        em {}
+
+        pre {}
+
+        blockquote {}
+
+        #main {
+            width: 600px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        #person1 {
+            position: absolute;
+            border-radius: 25px;
+            border: 2px solid #6c727c;
+            margin: 250px 0px 0px 0px;
+            width: 150px;
+            padding: 5px;
+            background: #f7f7f7;
+            font-family: arial;
+            font-size: 14px;
+            color: #808080;
+            line-height: 14px;
+            font-style: oblique;
+            text-align: center;
+        }
+
+        #person2 {
+            position: absolute;
+            border-radius: 25px;
+            border: 2px solid #6c727c;
+            margin: 250px 0px 0px 200px;
+            width: 150px;
+            padding: 5px;
+            background: #f7f7f7;
+            font-family: arial;
+            font-size: 14px;
+            color: #808080;
+            line-height: 14px;
+            font-style: oblique;
+            text-align: center;
+        }
+
+        #genbutt {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            border-radius: 25px;
+            border: 2px solid #6c727c;
+            margin: 250px 0px 0px 500px;
+            width: 120px;
+            padding: 5px 5px 5px 5px;
+            background: #fff;
+            cursor: pointer;
+            text-align: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #genbutt:hover {
+            margin: 251px 0px 0px 501px;
+            background: #DC143C;
+        }
+
+        #shitbox {
+            font-family: Bookman, URW Bookman L, serif; 
+            position: absolute;
+            border-radius: 25px;
+            border: 2px solid #6c727c;
+            padding: 20px;
+            background: #fff;
+            margin: 300px 0px 300px 0px;
+            width: 590px;
+            font-size: 16px;
+        }
+
+        #premise {
+          font-size: 16px;
+          font-family: Bookman, URW Bookman L, serif; 
+          letter-spacing: 0.05em;
+          word-spacing: 0.015em;
+          line-height: 150%;
+        }        }
+        
+        #swapbutt { 
+          font-family: Arial, Helvetica, sans-serif; 
+          position: absolute; 
+          border-radius: 25px; 
+          border: 2px solid #6c727c; 
+          margin: 200px 0px 0px 100px; 
+          width: 175px; 
+          padding: 5px 5px 5px 5px; 
+          background: #fff; 
+          cursor: pointer; 
+          text-align: center; 
+          -webkit-user-select: none; 
+          -moz-user-select: none; 
+          -ms-user-select: none; 
+          user-select: none; 
+        
+        }
+        
+        #swapbutt:hover { margin: 601px Opx Opx 601px; background: #e0ee67; 
+        }
+
+        
+    </style>
+
+    <script type="text/javascript">
+
+        var prompts = [
+            "<strong>{A}</strong> complaining about never getting a New Year's kiss, so <strong>{B}</strong> surprises them at midnight with one",
+            "<strong>{B}</strong> having to comfort their knew college dorm-mate, <strong>{A}</strong> , who is upset about being away from their parents for so long",
+            "<strong>{B}</strong> making fun of people on their college football team, until unexpectedly starting to fall in love with one of the players, <strong>{A}</strong>.",
+            "<strong>{A}</strong> lives in the city, so they don't really get to see the starry skies that well, so <strong>{B}</strong> invites them over to go stargazing.",
+            "<strong>{B}</strong> and <strong>{A}</strong> 's power has gone out and it's up to them to find enough candles to light up the house.",
+            "<strong>{B}</strong> has a broken heater, so <strong>{A}</strong> stops by with warm blankets and hot chocolate to keep them warm.",
+            "<strong>{A}</strong> running their hands through <strong>{B}</strong> 's hair.'",
+            "<strong>{A}</strong> and <strong>{B}</strong> cuddling after a long day, and talking about each other's problems together.",
+            "<strong>{A}</strong> and <strong>{B}</strong> huddled by the fireplace at night after spending the day in the fresh snow.",
+            "<strong>{B}</strong> lives in an apartment. one day, they find themselves dancing while cleaning their house. once they finish, they overhear <strong>{A}</strong> (their neighbor) giving a round of applause from the other side of the wall.",
+            "<strong>{B}</strong> is hopelessly in love with <strong>{A}</strong>. but they have no reason to be seeing each other. no mutual friends, no classes together, no job together, etc.",
+            "<strong>{A}</strong> and <strong>{B}</strong> walking around the library, picking out books they think each of them would like.",
+            "<strong>{A}</strong> 'meet me in the hotel room' / <strong>{B}</strong> 'ok pitbull.'",
+            "<strong>{B}</strong> and <strong>{A}</strong> staying up late, simply talking to each other for the company.",
+            "<strong>{A}</strong> feeling dizzy when they wake up, and <strong>{B}</strong> rushing to their side to help them upright.",
+            "<strong>{B}</strong> and <strong>{A}</strong> texting each other at 3 in the morning, yelling at each other over the phone to go to bed.",
+            "<strong>{A}</strong> going to their first ever convention in a costume from their favorite series, then they meet <strong>{B}</strong>, someone in the coolest costume they've ever seen.",
+            "<strong>{A}</strong> and <strong>{B}</strong> shit talking eachother as a love language.",
+            "<strong>{A}</strong> trying to sleep, as <strong>{B}</strong> bangs pots and pans together.",
+            "<strong>{A}</strong> is doing figure studies for art class, though they find themselves not focused on their work, as they're too infatuated with the new model, <strong>{B}</strong>.",
+            "<strong>{B}</strong> telling <strong>{A}</strong> that everything will be alright.",
+            "<strong>{A}</strong> and <strong>{B}</strong> getting lost in the large crowds of people at the school dance. they somehow find themselves dancing together.",
+            "<strong>{A}</strong> giving <strong>{B}</strong> a back massage.",
+            "<strong>{B}</strong> scrapes their knee, <strong>{A}</strong> kisses it better.",
+            "<strong>{A}</strong> is a worldwide wanted serial killer. <strong>{B}</strong> is someone who they'd been meaning to kill, but for some reason, they just can't.",
+            "<strong>{B}</strong> is the boss of a crime syndicate, <strong>{A}</strong> is their target. <strong>{B}</strong> is about to rob them and finish the job, but before they can make it, they suddenly realize that <strong>{A}</strong> is their childhood friend.",
+            "<strong>{B}</strong> is a street racer, who considers themselves pretty unknown. <strong>{A}</strong> comes up to them after a long race, simply telling them that they'd worked hard out there and done a good job.",
+            "<strong>{A}</strong> and <strong>{B}</strong> work in two completely different parts of the mall, yet they're both running a little late while cleaning up after shift. conveniently, it began to storm and the power went out, meaning the electronic doors (their only way of actually getting out of the mall) were locked up. both find themselves trying to escape, and then meet each other for the first time.",
+            "<strong>{A}</strong> jumping out from a closet to scare <strong>{B}</strong> .",
+            "<strong>{A}</strong> is very small, yet is sitting in the spacious seat. <strong>{B}</strong> is a lot larger, but found themselves crammed into the smaller seat.",
+            "<strong>{A}</strong> and <strong>{B}</strong> meet after getting into a petty argument in the voice chat of an online video game.",
+            "<strong>{B}</strong> and <strong>{A}</strong> having a make-believe fashion show in the living room.",
+            "<strong>{B}</strong> convincing <strong>{A}</strong> to come over and watch shitty reality tv with them.",
+            "<strong>{A}</strong> and <strong>{B}</strong> pretending to date in front of each other's families to avoid their parents making fun of them for being single again at christmas dinner.",
+            "whenever <strong>{A}</strong> gets slightly frustrated or upset with anything, <strong>{B}</strong> immediately insists they take care of it.",
+            "<strong>{A}</strong> and <strong>{B}</strong> watching weird youtube videos together.",
+            "<strong>{A}</strong> is injured, and <strong>{B}</strong> makes it their duty to watch over them.",
+            "<strong>{A}</strong> going on a long infodump to <strong>{B}</strong>, who's enjoying every bit of it.",
+            "<strong>{A}</strong> stopping at a crossroad, having <strong>{B}</strong> be the one to hold their hand as they both walk accross.",
+            "<strong>{A}</strong> making a private spotify playlist for crushing on <strong>{B}</strong>, unbeknownst to them, they forgot they never actually made it private.",
+            "<strong>{B}</strong> is a children's entertainer who's sick of their job, whilst <strong>{A}</strong> is the company's new hire.",
+            "<strong>{A}</strong> has been pestering, poking, jabbing, and flat out just annoying <strong>{B}</strong> for hours.",
+            "<strong>{A}</strong> shows up, drenched in rain, on <strong>{B}</strong>'s doorstep.",
+            "<strong>{A}</strong>: 'when i die, you may have my cats.' / <strong>{B}</strong>: 'dude i don't want your cats, i want you to be ok!.'",
+            "<strong>{A}</strong> coming home late, only being able to fall asleep after seeing <strong>{B}</strong> safe and in-person.",
+        ]
+      
+          function clear1() {
+
+        document.getElementById("person1").value = "";
+        document.getElementById("person1").style.fontStyle = "normal";
+    }
+
+    function clear2() {
+
+        document.getElementById("person2").value = "";
+        document.getElementById("person2").style.fontStyle = "normal";
+    }
+    
+    
+    var A, B;
+    var str; 
+    
+     function fluff() {
+
+        // Get names of OTP
+        A = document.getElementById("person1").value;
+        B = document.getElementById("person2").value;
+
+        // Get random prompt
+        var R1 = Math.floor(Math.random() * prompts.length);
+        str = prompts[R1] 
+
+        // Replace {A} & {B} in prompt with OTP names
+        var result = str.replace(/{A}/g, A).replace(/{B}/g, B);
+        document.getElementById("premise").innerHTML = result;
+    }
+    
+        function swapname() { 
+        //Swapping OTP names     
+       var temp = A;
+       A = B;
+       B = temp;
+        
+       var result = str.replace(/{A}/g, A).replace(/{B}/g, B); 
+       document.getElementById("premise").innerHTML = result; 
+}c
+    
+    </script>
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <form>
+          <input type="text" name="otp1" value="person a" id="person1" onfocus="clear1()">
+        </form>
+        <form>
+          <input type="text" name="otp2" value="person b" id="person2" onfocus="clear2()">
+        </form>
+        <div id="genbutt" onclick="fluff()">generate a prompt!</div>
+        <div id="shitbox">
+            <b>your prompt is:</b>
+            <br>
+            <br>
+            <span id="premise"></span>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+  </body>
+</html>
