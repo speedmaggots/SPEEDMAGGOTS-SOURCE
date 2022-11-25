@@ -1,2 +1,5 @@
 # SPEEDMAGGOTS-SOURCE
-source code for my neocities site
+welcome 2 speedmaggots source, this is the source code for my neocities site that i've been working on since december 28th 2021. weird how i'm just now making a github. i have no clue how this site works, since i'm pretty inexperienced with coding. however, i do know that it's recomended to keep your code all in one spot.
+all I ask is that you ask me before you try and take anything for your own. I'm pretty lenient with "code theft", since I personally could care less, I just want to know who's using it and for what. as well as the fact that a lot of my code is built off of templates and collaborative coding, so if you take the code with permission, I can point you to where you should add credits. 
+a lot of code most likely contains image files that won't be hosted here, so do with that what you will. strangely eough I use discord mostly to unpload files and host, but I'm working on moving those files to imgur or removing any hotlinks.
+I hope this readme isn't getting too lengthy, I just like to talk. that being said, welcome to the source code.
