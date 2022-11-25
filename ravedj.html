@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Rave.dj Downloader</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+</head>
+
+<body>
+
+<h1>Rave.dj Downloader</h1>
+
+If the video does not download then this might be broken/you need to wait for the video to finish!
+
+<br>
+
+<input type="text" id="url" value="Rave.dj URL">
+
+<button onclick="download()">Download</button>  
+
+<script>
+
+var downloader = function(downloadURL) {
+
+
+
+   location = downloadURL;
+
+
+
+};
+
+
+
+function download() {
+
+    var theURL = document.getElementById("url").value;
+
+    var myURL = theURL.split("/");
+
+    console.log(myURL)
+
+    var realURL = "https://api.red.wemesh.ca/mashups/" + myURL[3];
+
+
+
+    $.getJSON(realURL, function( json ) {
+
+      if(json.data.videos.max == null) {
+
+       alert("Wait for the video to finish!").then(location.reload())
+
+      } else {
+
+       downloader(json.data.videos.max);
+
+       console.log( "MP4 URL: " + json.data.videos.max);
+
+      }
+
+    });
+
+
+
+}
+
+</script>
+<img src="https://images-ext-1.discordapp.net/external/v0Sc6UUHJbS4xBVA2FZb_doL9KI3bc7IBnTKlrOC9MI/https/media.tenor.com/images/b9ca6e9780e846bf460d04d23d825a11/tenor.gif"> <img src="https://images-ext-1.discordapp.net/external/eWzvddI_XRtfTbNX67jWx9WLuZNNxvXhSsePugA1KeI/%3Fitemid%3D10880275/https/media1.tenor.com/images/309ff7b040e61ded40bae7aaf187d03a/tenor.gif">
+<h1> note: this was not made by me or the person i nabbed it from, <a href="https://molternkirby.neocities.org/rave.dj.html">but check that guy out anyways</a> </h1>
+<a href="https://speedmaggots.neocities.org/"> <font size="5"> Return to homepage </font> </a>
+</body>
+
+</html>
